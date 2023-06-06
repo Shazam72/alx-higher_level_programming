@@ -1,6 +1,9 @@
 #!/usr/bin/python3
-def uppercase(stringer):
-    for c in stringer:
-        _c = ord(c)
-        print(f"{_c - 32:c}" if 97 <= _c <= 123 else f"{c}", end="")
-    print()
+def uppercase(str):
+    upper_str = ""
+    for c in str:
+        if (ord(c) in range(97, 123)):
+            upper_str += chr(ord(c) - 32)
+        else:
+            upper_str += c
+    print("{}".format(upper_str))
