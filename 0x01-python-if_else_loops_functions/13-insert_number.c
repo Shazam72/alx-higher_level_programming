@@ -12,9 +12,20 @@ listint_t *insert_node(listint_t **head, int number)
 	listint_t *tmp = NULL, *node = NULL;
 
 	if (*head == NULL)
-		return (NULL);
+	{
+		node = add_nodeint_end(head, number);
+		return (node);
+	}
 	for (tmp = *head; tmp; tmp = tmp->next)
 	{
+		if (tmp->n >= number)
+		{
+			add_nodeint_end(&node, number);
+
+			node->next = tmp;
+			*head = node;
+			break;
+		}
 		if (tmp->next == NULL ||
 				(tmp->next && tmp->n <= number && tmp->next->n >= number))
 		{
