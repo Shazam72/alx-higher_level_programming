@@ -16,6 +16,6 @@ def roman_to_int(roman_string):
                 value += values[roman_string[i]] - 2 * values[roman_string[i]]
             else:
                 value += values[roman_string[i]]
-        return value
-    except ValueError:
+        return value if value > 0 else -value
+    except KeyError:
         return 0
