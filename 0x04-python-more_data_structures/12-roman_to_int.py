@@ -2,7 +2,7 @@
 def roman_to_int(roman_string):
     value = 0
     if roman_string is None or type(roman_string) != str:
-        return 0
+        return value
     try:
         values = {
                 'I': 1,
@@ -14,10 +14,11 @@ def roman_to_int(roman_string):
                 'M': 1000,
                 }
         for i in range(0, len(roman_string)):
-            if i > 0 and values[roman_string[i]] > values[roman_string[i - 1]]:
-                value += values[roman_string[i]] - 2 * values[roman_string[i]]
+            letter_val = values[roman_string[i]]
+            if i > 0 and letter_val > values[roman_string[i - 1]]:
+                value += letter_val - 2*values[roman_string[i - 1]]
             else:
-                value += values[roman_string[i]]
-        return value if value > 0 else -value
+                value += letter_val
+        return value
     except KeyError:
         return 0
