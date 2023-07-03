@@ -25,7 +25,7 @@ class Rectangle:
             return ''
         for x in list(range(0, self.height)):
             for y in list(range(0, self.width)):
-                print(Rectangle.print_symbol, end='')
+                print(self.print_symbol, end='')
             if x != self.height - 1:
                 print()
         return ''
