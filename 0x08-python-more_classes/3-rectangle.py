@@ -22,7 +22,8 @@ class Rectangle:
         for x in list(range(0, self.height)):
             for y in list(range(0, self.width)):
                 print('#', end='')
-            print()
+            if x != self.height - 1:
+                print()
         return ''
 
     @property
