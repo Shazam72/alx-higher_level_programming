@@ -7,6 +7,7 @@ class Rectangle:
     """A python class that represent a rectangle."""
 
     def __init__(self, width=0, height=0):
+        """Init."""
         self.width = width
         self.height = height
 
@@ -16,11 +17,12 @@ class Rectangle:
 
         Description: print '#' to represent the rectangle
         """
-        if self.width >= 0 and self.height >= 0:
-            for x in list(range(0, self.height)):
-                for y in list(range(0, self.width)):
-                    print('#', end='')
-                print()
+        if self.width == 0 or self.height == 0:
+            return ''
+        for x in list(range(0, self.height)):
+            for y in list(range(0, self.width)):
+                print('#', end='')
+            print()
         return ''
 
     @property
