@@ -34,11 +34,11 @@ class Rectangle:
         """
         return "Rectangle({}, {})".format(self.width, self.height)
 
-    def __dest__(self):
+    def __del__(self):
         """
-        Set __dest__ with custom function.
+        Set __del__ with custom function.
 
-        Description: just a custom __dest__
+        Description: just a custom __del__
         """
         print("Bye rectangle...")
         del self
