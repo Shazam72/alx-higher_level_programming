@@ -17,9 +17,9 @@ class Rectangle:
 
         Description: print '#' to represent the rectangle
         """
-        if not (self.__height == 0 or self.__height == 0):
-            for x in list(range(self.height)):
-                for y in list(range(self.width)):
+        if self.height >= 0 and self.height >= 0:
+            for x in list(range(0, self.height)):
+                for y in list(range(0, self.width)):
                     print('#', end='')
                 print()
         return ''
@@ -36,12 +36,12 @@ class Rectangle:
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
-        self.__width = value
+        self.width = value
 
     @property
     def height(self):
         """Getter for height property."""
-        return self.__height
+        return self.height
 
     @height.setter
     def height(self, value):
@@ -50,14 +50,14 @@ class Rectangle:
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
-        self.__height = value
+        self.height = value
 
     def area(self):
         """Get current rectangle instance area."""
-        return self.__height * self.__width
+        return self.height * self.width
 
     def perimeter(self):
         """Get current rectangle instance perimeter."""
-        if self.__height == 0 or self.__height == 0:
+        if self.height == 0 or self.height == 0:
             return 0
-        return 2 * (self.__height + self.__width)
+        return 2 * (self.height + self.width)
