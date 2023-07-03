@@ -99,6 +99,5 @@ class Rectangle:
     @classmethod
     def square(cls, size=0):
         """Return a new Rectangle with width == height === size."""
-        if size < 0:
-            raise ValueError('size must be >= 0')
-        return cls(size, size)
+        square = cls(size, size)
+        return square
