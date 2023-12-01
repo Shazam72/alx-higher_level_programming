@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Sends a search request to the Twitter API.
+
 Display format: [<Tweet ID>] <Tweet text> by <Tweet owner name>
 Usage: ./103-search_twitter.py <consumer key> <consumer secret> <search string>
   - Uses the application-only authenitcation flow.
@@ -40,15 +41,12 @@ if __name__ == "__main__":
         tweet_id = t.get("id")
         tweet_text = t.get("text")
         tweet_author = t.get("user").get("name")
-        print("[{}] {} by {}".format(tweet_id, tweet_text, tweet_author))#!/usr/bin/python3
+        print("[{}] {} by {}".format(tweet_id, tweet_text, tweet_author))
 """Sends a search request to the Twitter API.
 Display format: [<Tweet ID>] <Tweet text> by <Tweet owner name>
 Usage: ./103-search_twitter.py <consumer key> <consumer secret> <search string>
   - Uses the application-only authenitcation flow.
 """
-import sys
-import base64
-import requests
 
 
 if __name__ == "__main__":
