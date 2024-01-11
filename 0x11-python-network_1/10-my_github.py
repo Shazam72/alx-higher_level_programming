@@ -8,8 +8,8 @@ headers = {
     'Authorization': f"Bearer {sys.argv[2]}",
     'X-GitHub-Api-Version': '2022-11-28'
 }
-url = f"https://api.github.com/users/{sys.argv[1]}"
-with requests.get(url, headers) as resp:
+url = "https://api.github.com/user"
+with requests.get(url, headers=headers) as resp:
     try:
         if resp.status_code != 200:
             print(None)
