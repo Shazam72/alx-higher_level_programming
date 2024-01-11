@@ -5,5 +5,5 @@ import sys
 
 if __name__ == '__main__':
     data = {'email': sys.argv[2]}
-    with requests.get(sys.argv[1], data) as resp:
+    with requests.post(sys.argv[1], data) as resp:
         print(resp.content.decode())
