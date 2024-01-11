@@ -1,20 +1,10 @@
 #!/usr/bin/python3
 """Takes your github credentials and displays your id using gith api."""
 import requests
+from requests.auth import HTTPBasicAuth
 import sys
 
-headers = {
-    'Accept': 'application/vnd.github+json',
-    'Authorization': f"Bearer {sys.argv[2]}",
-    'X-GitHub-Api-Version': '2022-11-28'
-}
-url = "https://api.github.com/user"
-with requests.get(url, headers=headers) as resp:
-    try:
-        if resp.status_code != 200:
-            print(None)
-        else:
-            data = resp.json()
-            print(data['id'])
-    except KeyError:
-        print(None)
+if __name__ == "__main__":
+    auth = HTTPBasicAuth(sys.argv[1], sys.argv[2])
+    r = requests.get("https://api.github.com/user", auth=auth)
+    print(r.json().get("id"))
